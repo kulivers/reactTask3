@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\reactTask_3\\reactTask_3.csproj": {}
+    "C:\\dev\\reactTask3\\reactTask_3.csproj": {}
   },
   "projects": {
-    "C:\\dev\\reactTask_3\\reactTask_3.csproj": {
+    "C:\\dev\\reactTask3\\reactTask_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\reactTask_3\\reactTask_3.csproj",
+        "projectUniqueName": "C:\\dev\\reactTask3\\reactTask_3.csproj",
         "projectName": "reactTask_3",
-        "projectPath": "C:\\dev\\reactTask_3\\reactTask_3.csproj",
+        "projectPath": "C:\\dev\\reactTask3\\reactTask_3.csproj",
         "packagesPath": "C:\\Users\\Alla\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\reactTask_3\\obj\\",
+        "outputPath": "C:\\dev\\reactTask3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alla\\AppData\\Roaming\\NuGet\\NuGet.Config",

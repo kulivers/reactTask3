@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/rBZFd2wKydYc6c+ZNMo13dO1kmzpCJraZOS6jwdBMvyPUMMigBlzM++SFuMRNpLxK2xAEbSYQbZe4IjOTUdBQ==",
+  "dgSpecHash": "nYitUFa1PK0hSITCF4In9EcT935RFGXR/Yp1Q9G7FxCbYW4cisn3lZQKyZcOf4IYN/c1vxlqlOi1C/73QB/CVQ==",
   "success": true,
-  "projectFilePath": "C:\\dev\\reactTask_3\\reactTask_3.csproj",
+  "projectFilePath": "C:\\dev\\reactTask3\\reactTask_3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alla\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.9\\microsoft.aspnetcore.nodeservices.3.1.9.nupkg.sha512",
     "C:\\Users\\Alla\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.9\\microsoft.aspnetcore.spaservices.3.1.9.nupkg.sha512",
