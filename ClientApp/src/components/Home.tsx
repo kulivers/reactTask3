@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Alert } from 'reactstrap';
 
 enum Education {
     High = "High",
@@ -27,11 +28,18 @@ class Home extends React.Component {
     }
 
     handleReset = (event) => {
-        this.setState( { name: '', isMale: true, education: Education.High, hasCar: false, messages: [] });
+        this.setState({ name: '', isMale: true, education: Education.High, hasCar: false, messages: [] });
 
     }
-    
+
     handleSubmit = (event) => {
+        console.log("hdl");
+        if (this.state.name == '') {
+            console.log("empty name");
+            alert('LOGIN NORMALNO DAVAY!!!!!!!!!!!!!!!!!');
+
+        }
+        else{
         var that = this;
         fetch('api/UserRegister', {
             method: 'POST',
@@ -46,18 +54,19 @@ class Home extends React.Component {
         });
 
         event.preventDefault();
+        }
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit} onReset = {this.handleReset}>
-                    <h1> Заполните анкету:<br /></h1>
-                    <h2> Введите фамилию, имя:<br /></h2>
+                <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
+                    <h1> Регистрация:<br /></h1>
+                    <h2> Введите ваш логин:<br /></h2>
                     <input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br />
                     <h3> Укажите пол:<br /></h3>
                     <input type="RADIO" checked={this.state.isMale} name="isMale" value="true" onChange={this.handleBoolChange} /> Мужской<br />
-                    <input type="RADIO" checked={!this.state.isMale} name="isMale" value="false" onChange={this.handleBoolChange}/> Женский
+                    <input type="RADIO" checked={!this.state.isMale} name="isMale" value="false" onChange={this.handleBoolChange} /> Женский
                     <h3>  Укажите образование:<br /></h3>
                     <select name="education"
                         value={this.state.education}
@@ -66,8 +75,8 @@ class Home extends React.Component {
                         <option value={Education.Partly}>Незаконченное высшее</option>
                         <option value={Education.Middle}>Среднее полное</option>
                     </select>
-                    <h3>  Наличие авто:<br /></h3>
-                    <input type="checkbox" onClick={this.handleHasCar}  name = "hasCar"/>
+                    <h3>  Я согласен с правилами сайта:<br /></h3>
+                    <input type="checkbox" onClick={this.handleHasCar} name="hasCar" />
 
                     <div><p>
                         <input type="submit" value="Отправить" />
