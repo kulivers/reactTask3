@@ -5,22 +5,21 @@ namespace userWebApi.Model
 {
     public class UserData
     {
-        public string Name { get; set; }
-        public bool IsMale { get; set; }
-        public string Education { get; set; }
-        public bool HasCar { get; set; }
+        public int Start { get; set; }
+        public int End { get; set; }
+        public bool IsSquare { get; set; }
 
         public RegistrationMessage GetRegisteredMessage()
         {
-            var sexData = IsMale ? "Мужской" : "Женский";
+            var sexData = IsSquare ? "Мужской" : "Женский";
 
             var messages = new List<string>()
             {
-                $"{Name}, вы успешно зарегестрированы.",
+                $"{IsSquare}, вы успешно зарегестрированы.",
                 "Вы указали следующие данные:",
-                $"Образование: {MakeEducationString(Education)}", 
+                $"Образование:",
                 $"Пол: {sexData}",
-                HasCar ? "Согласны с правилами сайта" : "Не согласны с правилами сайта"
+                IsSquare ? "Согласны с правилами сайта" : "Не согласны с правилами сайта"
             };
 
             return
