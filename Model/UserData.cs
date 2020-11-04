@@ -5,21 +5,22 @@ namespace userWebApi.Model
 {
     public class UserData
     {
-        public int Start { get; set; }
-        public int End { get; set; }
+        public int startOtr { get; set; }
+        public int endOtr { get; set; }
         public bool IsSquare { get; set; }
 
         public RegistrationMessage GetRegisteredMessage()
         {
-            var sexData = IsSquare ? "Мужской" : "Женский";
-
+            var sexData = IsSquare ? "квадрад" : "не кодред";
+            var start = startOtr.ToString();
+            var end = endOtr.ToString();
+            
             var messages = new List<string>()
             {
-                $"{IsSquare}, вы успешно зарегестрированы.",
-                "Вы указали следующие данные:",
-                $"Образование:",
-                $"Пол: {sexData}",
-                IsSquare ? "Согласны с правилами сайта" : "Не согласны с правилами сайта"
+                
+                $"{sexData}",
+                //$"{start}",
+                //$"{end}"
             };
 
             return
@@ -29,19 +30,7 @@ namespace userWebApi.Model
                 };
         }
 
-        private static string MakeEducationString(string education)
-        {
-            switch (education)
-            {
-                case "High":
-                    return "Высшее";
-                case "Partly":
-                    return "Незаконченное высшее";
-                case "Middle":
-                    return "Среднее";
-                default:
-                    return "Загадочное";
-            }
-        }
+        
+
     }
 }

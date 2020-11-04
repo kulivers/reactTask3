@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nYitUFa1PK0hSITCF4In9EcT935RFGXR/Yp1Q9G7FxCbYW4cisn3lZQKyZcOf4IYN/c1vxlqlOi1C/73QB/CVQ==",
+  "dgSpecHash": "fQeMZaHT60GiIaOeiC3VVkik9IctDBUNohKcIGCKT9UVhDMlsrkvoZ9GYSo3JgE/6i7R/BoX5gi9YkpUPIbBVg==",
   "success": true,
   "projectFilePath": "C:\\dev\\reactTask3\\reactTask_3.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Alla\\.nuget\\packages\\microsoft.extensions.options\\3.1.9\\microsoft.extensions.options.3.1.9.nupkg.sha512",
     "C:\\Users\\Alla\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\3.1.9\\microsoft.extensions.options.configurationextensions.3.1.9.nupkg.sha512",
     "C:\\Users\\Alla\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.9\\microsoft.extensions.primitives.3.1.9.nupkg.sha512",
+    "C:\\Users\\Alla\\.nuget\\packages\\microsoft.typescript.msbuild\\4.0.3\\microsoft.typescript.msbuild.4.0.3.nupkg.sha512",
     "C:\\Users\\Alla\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512"
   ],
   "logs": []
