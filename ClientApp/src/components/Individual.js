@@ -15,14 +15,38 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_1 = require("react");
+function fac(n) {
+    if (n == 0)
+        return 1;
+    if (n >= 1) {
+        var pr = 1;
+        for (; n >= 1; n--) {
+            pr = n * pr;
+        }
+        return pr;
+    }
+    if (n < 0)
+        throw new Error("Cant get fuctorial <0");
+}
+function GetFunc(a, b, c, k) {
+    var sum = 0;
+    var val = 0;
+    for (var i = 1; i <= k; i++) {
+        val = (Math.pow((-1), (a * i - 1))) / fac(b * i + c);
+        sum = sum + val;
+    }
+    //return sum;
+    return a + k;
+}
+//this.state = { a: 3, b: 4, c: 5, k: 1, result: 0 };
 function comp(x, y) {
     if (x === void 0) { x = 3; }
     if (y === void 0) { y = 4; }
     return x * y;
 }
-var Home6a = /** @class */ (function (_super) {
-    __extends(Home6a, _super);
-    function Home6a(props) {
+var Home6b = /** @class */ (function (_super) {
+    __extends(Home6b, _super);
+    function Home6b(props) {
         var _this = _super.call(this, props) || this;
         _this.handleIntChange = function (event) {
             var _a, _b;
@@ -31,10 +55,7 @@ var Home6a = /** @class */ (function (_super) {
                 _this.setState((_a = {}, _a[event.target.name] = 0, _a), function () {
                     this.setState({
                         messages: [
-                            "func() = " + comp().toString(10),
-                            "func(x) = " + comp(this.state.x).toString(10),
-                            "func(y) = " + comp(undefined, this.state.y).toString(10),
-                            "func(x,y) = " + comp(this.state.x, this.state.y).toString(10),
+                            "func() = " + GetFunc(this.state.a, this.state.b, this.state.c, this.state.k).toString(10)
                         ]
                     });
                 });
@@ -43,14 +64,12 @@ var Home6a = /** @class */ (function (_super) {
                 _this.setState((_b = {}, _b[event.target.name] = parseInt(event.target.value), _b), function () {
                     this.setState({
                         messages: [
-                            "func() = " + comp().toString(10),
-                            "func(x) = " + comp(this.state.x).toString(10),
-                            "func(y) = " + comp(undefined, this.state.y).toString(10),
-                            "func(x,y) = " + comp(this.state.x, this.state.y).toString(10),
+                            "func() = " + GetFunc(this.state.a, this.state.b, this.state.c, this.state.k).toString(10)
                         ]
                     });
                 });
             }
+            console.log(_this.state);
             event.preventDefault();
         };
         _this.handleSubmit = function (event) {
@@ -64,24 +83,19 @@ var Home6a = /** @class */ (function (_super) {
             event.preventDefault();
         };
         _this.state = {
-            x: 3,
-            y: 4,
-            messages: []
+            a: 3, b: 4, c: 5, k: 1, messages: []
         };
         return _this;
     }
-    Home6a.prototype.render = function () {
+    Home6b.prototype.render = function () {
         return (React.createElement("div", null,
             React.createElement("form", { onSubmit: this.handleSubmit },
-                React.createElement("h2", null, " x:"),
-                React.createElement("input", { type: 'text', name: 'x', pattern: "[0-9]+", value: this.state.x, defaultValue: "", onChange: this.handleIntChange }),
-                React.createElement("br", null),
-                React.createElement("h2", null, " y:"),
-                React.createElement("input", { type: 'text', name: 'y', pattern: "[0-9]*", value: this.state.y, defaultValue: "", onChange: this.handleIntChange }),
+                React.createElement("h2", null, " k:"),
+                React.createElement("input", { type: 'text', name: 'k', pattern: "[0-9]+", value: this.state.k, defaultValue: "", onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("ul", null, this.state.messages.map(function (x) { return (React.createElement("li", null, x)); })))));
     };
-    return Home6a;
+    return Home6b;
 }(react_1.Component));
-exports.default = Home6a;
-//# sourceMappingURL=Сomposition.js.map
+exports.default = Home6b;
+//# sourceMappingURL=Individual.js.map

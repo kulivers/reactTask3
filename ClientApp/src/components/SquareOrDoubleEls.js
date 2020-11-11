@@ -14,6 +14,24 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+function CheckInputsCorrect(start, end) {
+    //let isnum = /^[0-9]*$/.test(start);
+    if (parseInt(start) > parseInt(end)) {
+        alert('start > end');
+        return false;
+    }
+    if (start == "") {
+        alert('start is empty');
+        return false;
+    }
+    if (end == "") {
+        alert('end is empty');
+        return false;
+    }
+    //if (!isnum) { alert('start input is not correct'); return false; }
+    //if (!isnum2) { alert('end input is not correct'); return false; }
+    return true;
+}
 var Home = /** @class */ (function (_super) {
     __extends(Home, _super);
     function Home(props) {
@@ -32,21 +50,20 @@ var Home = /** @class */ (function (_super) {
             _this.setState((_a = {}, _a[event.target.name] = event.target.value !== "false", _a));
         };
         _this.handleSubmit = function (event) {
+            console.log("submited");
             if (_this.state.isSquare == true) {
                 _this.callSquare(_this.state.start, _this.state.end, event);
             }
             else {
                 _this.callDouble(_this.state.start, _this.state.end, event);
             }
+            event.preventDefault();
         };
         _this.state = { start: 0, end: 0, isSquare: false, messages: [] };
         return _this;
     }
     Home.prototype.callSquare = function (start, end, event) {
-        if (this.state.start > this.state.end) {
-            alert('start > end');
-        }
-        else {
+        if (CheckInputsCorrect(this.state.start, this.state.end)) {
             var that = this;
             fetch('api/ArrayCalculator/Square', {
                 method: 'POST',
@@ -63,10 +80,8 @@ var Home = /** @class */ (function (_super) {
         }
     };
     Home.prototype.callDouble = function (start, end, event) {
-        if (this.state.start > this.state.end) {
-            alert('start > end');
-        }
-        else {
+        if (CheckInputsCorrect(this.state.start, this.state.end)) {
+            console.log("checked");
             var that = this;
             fetch('api/ArrayCalculator/Double', {
                 method: 'POST',
@@ -79,6 +94,7 @@ var Home = /** @class */ (function (_super) {
                     that.setState({ messages: !response.ok ? ["status: " + response.statusText] : json });
                 });
             });
+            console.log("fetched");
             event.preventDefault();
         }
     };
@@ -88,12 +104,12 @@ var Home = /** @class */ (function (_super) {
                 React.createElement("h2", null,
                     " \u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0447\u0430\u043B\u043E \u043E\u0442\u0440\u0435\u0437\u043A\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'start', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', pattern: "[0-9]*", name: 'start', value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("h2", null,
                     " \u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043A\u043E\u043D\u0435\u0446 \u043E\u0442\u0440\u0435\u0437\u043A\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'end', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', pattern: "[0-9]*", name: 'end', value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("h3", null,
                     " \u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u0432\u0438\u0434 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F:",
@@ -112,4 +128,4 @@ var Home = /** @class */ (function (_super) {
     return Home;
 }(React.Component));
 exports.default = Home;
-//# sourceMappingURL=Home.js.map
+//# sourceMappingURL=SquareOrDoubleEls.js.map

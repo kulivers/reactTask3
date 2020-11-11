@@ -29,52 +29,78 @@ function GetFunc(a,b,c,k) {
     //return sum;
     return a+k;
 }
+//this.state = { a: 3, b: 4, c: 5, k: 1, result: 0 };
 
+function comp(x = 3, y = 4) {
+    return x * y;
+}
 
 class Home6b extends Component<any, any> {
     constructor(props: any) {
         super(props);
-        this.state = { a: 3, b: 4, c: 5, k: 1};
-
-        this.handleIntChange = this.handleIntChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.state = {
+            a: 3, b: 4, c: 5, k: 1, messages: []
+        }
     }
     handleIntChange = (event: any) => {
-        this.setState({ [event.target.name]: parseInt(event.target.value) });
-        this.state.result = GetFunc(this.state.a, this.state.b, this.state.c, this.state.k);
+        //console.log("parseInt event.target.value", parseInt(event.target.value))
+        if (isNaN(parseInt(event.target.value))) {
+            this.setState({ [event.target.name]: 0 },
+                function () {
+                    this.setState({
+                        messages: [
+                            "func() = " + GetFunc(this.state.a, this.state.b, this.state.c, this.state.k).toString(10)
+                        ]
+                    })
+                });
 
-        console.log(this.state.a, this.state.b, this.state.c, this.state.k, this.state.result);
-        //event.preventDefault();
-    }
-    handleSubmit = (event: any) => {
-        var that = this;
-        //this.state.result = GetFunc(a, b, c, k);
-        that.state.result = GetFunc(this.state.a, this.state.b, this.state.c, this.state.k);
-        console.log(this.state.a, this.state.b, this.state.c, this.state.k, this.state.result);
+        }
+        else {
+            this.setState({ [event.target.name]: parseInt(event.target.value) },
+                function () {
+                    this.setState({
+                        messages: [
+                            "func() = " + GetFunc(this.state.a, this.state.b, this.state.c, this.state.k).toString(10)
+                        ]
+                    })
+                });
+        }
+        console.log(this.state);
         event.preventDefault();
 
     }
+    handleSubmit = (event: any) => {
+        //console.log("submited");
+        //if (this.state.isSquare == true) {
+        //    this.callSquare(this.state.start, this.state.end, event);
+        //}
+        //else {
+        //    this.callDouble(this.state.start, this.state.end, event);
+
+        //}
+
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
-                    <h2> введите k:<br /></h2>
-                    <input type='text' name='k' value={this.state.name} onChange={this.handleIntChange} /><br />
+
+                    <h2> k:</h2>
+                    <input type='text' name='k' pattern="[0-9]+" value={this.state.k} defaultValue="" onChange={this.handleIntChange} /><br />
 
 
-                    <div><p>
-                        <input type="submit" value="Отправить" />
-                    </p></div>
+                    <ul>
+                        {this.state.messages.map((x: any) => (<li>{x}</li>))}
+                    </ul>
+
                 </form>
-                <div>
-                        result is: {this.state.result}
-                </div>
 
-            </div>
-            );
+            </div >
+        );
 
-            }
+    }
 
 
 }

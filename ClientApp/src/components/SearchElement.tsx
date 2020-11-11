@@ -2,7 +2,15 @@
 import { Alert } from 'reactstrap';
 import { Component } from 'react';
 
+function CheckInputsCorrect(firstEl, secondEl, thirdEl, searchEl) {
 
+    if (firstEl == "") { alert('firstEl is empty'); return false; }
+    if (secondEl == "") { alert('secondEl is empty'); return false; }
+    if (thirdEl == "") { alert('thirdEl is empty'); return false; }
+    if (searchEl == "") { alert('searchEl is empty'); return false; }
+
+    return true;
+}
 class Home2 extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -42,8 +50,10 @@ class Home2 extends React.Component<any, any> {
     
 
     handleSubmit = (event: any) => {
-        console.log("submited")
-        this.callSearch(this.state.firstEl, this.state.secondE5l, this.state.thirdEl, this.state.searchEl, event);
+        if (CheckInputsCorrect(this.state.firstEl, this.state.secondEl, this.state.thirdEl, this.state.searchEl))
+        {
+            this.callSearch(this.state.firstEl, this.state.secondE5l, this.state.thirdEl, this.state.searchEl, event);
+        }
     }
 
     render() {
@@ -51,16 +61,16 @@ class Home2 extends React.Component<any, any> {
             <div>
                 <form onSubmit={this.handleSubmit} >
                     <h2> введите первый элемент массива:<br /></h2>
-                    <input type='text' name='firstEl' value={this.state.name} onChange={this.handleIntChange} /><br />
+                    <input type='text' name='firstEl' pattern="\d+" value={this.state.name} onChange={this.handleIntChange} /><br />
 
                     <h2> введите второй элемент массива:<br /></h2>
-                    <input type='text' name='secondEl' value={this.state.name} onChange={this.handleIntChange} /><br />
+                    <input type='text' name='secondEl' pattern="^-?[0-9]\d*\.?\d*$" value={this.state.name} onChange={this.handleIntChange} /><br />
 
                     <h2> введите третий элемент массива:<br /></h2>
-                    <input type='text' name='thirdEl' value={this.state.name} onChange={this.handleIntChange} /><br />
+                    <input type='text' name='thirdEl' pattern="[0-9]*" value={this.state.name} onChange={this.handleIntChange} /><br />
 
                     <h2> введите искомый элемент массива:<br /></h2>
-                    <input type='text' name='searchEl' value={this.state.name} onChange={this.handleIntChange} /><br />
+                    <input type='text' name='searchEl' pattern="[0-9]*" value={this.state.name} onChange={this.handleIntChange} /><br />
 
                     
                     <div><p>

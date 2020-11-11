@@ -10,5 +10,5 @@ import Home6b from "./components/Individual";
 import './custom.css'
 
 export default () => (
-    <Home6b />
+
 );

@@ -14,6 +14,25 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+function CheckInputsCorrect(firstEl, secondEl, thirdEl, searchEl) {
+    if (firstEl == "") {
+        alert('firstEl is empty');
+        return false;
+    }
+    if (secondEl == "") {
+        alert('secondEl is empty');
+        return false;
+    }
+    if (thirdEl == "") {
+        alert('thirdEl is empty');
+        return false;
+    }
+    if (searchEl == "") {
+        alert('searchEl is empty');
+        return false;
+    }
+    return true;
+}
 var Home2 = /** @class */ (function (_super) {
     __extends(Home2, _super);
     function Home2(props) {
@@ -28,8 +47,9 @@ var Home2 = /** @class */ (function (_super) {
             _this.setState((_a = {}, _a[event.target.name] = parseInt(event.target.value), _a));
         };
         _this.handleSubmit = function (event) {
-            console.log("submited");
-            _this.callSearch(_this.state.firstEl, _this.state.secondE5l, _this.state.thirdEl, _this.state.searchEl, event);
+            if (CheckInputsCorrect(_this.state.firstEl, _this.state.secondEl, _this.state.thirdEl, _this.state.searchEl)) {
+                _this.callSearch(_this.state.firstEl, _this.state.secondE5l, _this.state.thirdEl, _this.state.searchEl, event);
+            }
         };
         _this.state = { firstEl: 0, secondEl: 0, thirdEl: 0, searchEl: 0, messages: [] };
         return _this;
@@ -55,22 +75,22 @@ var Home2 = /** @class */ (function (_super) {
                 React.createElement("h2", null,
                     " \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u044B\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u043C\u0430\u0441\u0441\u0438\u0432\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'firstEl', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', name: 'firstEl', pattern: "\\d+", value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("h2", null,
                     " \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u043C\u0430\u0441\u0441\u0438\u0432\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'secondEl', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', name: 'secondEl', pattern: "^-?[0-9]\\d*\\.?\\d*$", value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("h2", null,
                     " \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0440\u0435\u0442\u0438\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u043C\u0430\u0441\u0441\u0438\u0432\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'thirdEl', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', name: 'thirdEl', pattern: "[0-9]*", value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("h2", null,
                     " \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u0441\u043A\u043E\u043C\u044B\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u043C\u0430\u0441\u0441\u0438\u0432\u0430:",
                     React.createElement("br", null)),
-                React.createElement("input", { type: 'text', name: 'searchEl', value: this.state.name, onChange: this.handleIntChange }),
+                React.createElement("input", { type: 'text', name: 'searchEl', pattern: "[0-9]*", value: this.state.name, onChange: this.handleIntChange }),
                 React.createElement("br", null),
                 React.createElement("div", null,
                     React.createElement("p", null,
@@ -81,4 +101,4 @@ var Home2 = /** @class */ (function (_super) {
     return Home2;
 }(React.Component));
 exports.default = Home2;
-//# sourceMappingURL=Home2.js.map
+//# sourceMappingURL=SearchElement.js.map

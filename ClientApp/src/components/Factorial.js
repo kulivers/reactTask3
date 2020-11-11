@@ -28,15 +28,69 @@ function fac(n) {
     if (n < 0)
         throw new Error("Cant get fuctorial <0");
 }
+function CheckInputsCorrect(m, n) {
+    //let isnum = /^[0-9]*$/.test(start);
+    if (m > n) {
+        alert('error, m > n');
+        return false;
+    }
+    if (m == "") {
+        alert('m is empty');
+        return false;
+    }
+    if (n == "") {
+        alert('n is empty');
+        return false;
+    }
+    //if (!isnum) { alert('start input is not correct'); return false; }
+    //if (!isnum2) { alert('end input is not correct'); return false; }
+    return true;
+}
 var Home4 = /** @class */ (function (_super) {
     __extends(Home4, _super);
-    function Home4() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Home4(props) {
+        var _this = _super.call(this, props) || this;
+        _this.handleChange = function (event) {
+            var _a;
+            _this.setState((_a = {}, _a[event.target.name] = event.target.value, _a));
+        };
+        _this.handleIntChange = function (event) {
+            var _a;
+            //value ->int
+            _this.setState((_a = {}, _a[event.target.name] = parseInt(event.target.value), _a));
+        };
+        _this.handleSubmit = function (event) {
+            if (CheckInputsCorrect(_this.state.m, _this.state.n)) {
+                var c = fac(_this.state.n) / (fac(_this.state.m) * fac(_this.state.n - _this.state.m));
+                //this.state({ result: c })
+                _this.setState({ result: fac(_this.state.n) / (fac(_this.state.m) * fac(_this.state.n - _this.state.m)) });
+                console.log("c: ", c);
+                console.log(_this.state);
+            }
+            event.preventDefault();
+        };
+        _this.state = {
+            m: 3,
+            n: 5,
+            result: 0
+        };
+        return _this;
     }
     Home4.prototype.render = function () {
-        var n = 5;
-        var m = 3;
-        return (React.createElement("div", null, fac(n) / (fac(m) * fac(n - m))));
+        return (React.createElement("div", null,
+            React.createElement("form", { onSubmit: this.handleSubmit },
+                React.createElement("h2", null, " n:"),
+                React.createElement("input", { type: 'text', name: 'n', pattern: "[0-9]*", value: this.state.n, onChange: this.handleIntChange }),
+                React.createElement("br", null),
+                React.createElement("h2", null, " m:"),
+                React.createElement("input", { type: 'text', name: 'm', pattern: "[0-9]*", value: this.state.m, onChange: this.handleIntChange }),
+                React.createElement("br", null),
+                React.createElement("div", null,
+                    React.createElement("p", null,
+                        React.createElement("input", { type: "submit", value: "\u0420\u0435\u0448\u0438\u0442\u044C" })))),
+            React.createElement("div", null,
+                " function result is: ",
+                this.state.result)));
     };
     return Home4;
 }(react_1.Component));
