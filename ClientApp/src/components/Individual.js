@@ -89,6 +89,7 @@ var Home6b = /** @class */ (function (_super) {
     }
     Home6b.prototype.render = function () {
         return (React.createElement("div", null,
+            React.createElement("div", null, "\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0434\u043B\u044F \u0440\u0435\u0448\u0435\u043D\u0438\u044F \u0437\u0430\u0434\u0430\u0447\u0438 \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u0438\u043D\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u044B\u043C \u0437\u0430\u0434\u0430\u043D\u0438\u0435\u043C, \u0432\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u044E\u0442\u0441\u044F \u0447\u0435\u0440\u0435\u0437 \u0444\u043E\u0440\u043C\u0443."),
             React.createElement("form", { onSubmit: this.handleSubmit },
                 React.createElement("h2", null, " k:"),
                 React.createElement("input", { type: 'text', name: 'k', pattern: "[0-9]+", value: this.state.k, defaultValue: "", onChange: this.handleIntChange }),

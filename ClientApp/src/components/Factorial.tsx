@@ -68,6 +68,7 @@ class Home4 extends Component<any, any> {
 
         return (
             <div>
+                <div>Задание 4. Написать скрипт по вычислению: C с использованием функции.</div>
                 <form onSubmit={this.handleSubmit} >
                     <h2> n:</h2>
                     <input type='text' name='n' pattern="[0-9]*" value={this.state.n} onChange={this.handleIntChange} /><br />

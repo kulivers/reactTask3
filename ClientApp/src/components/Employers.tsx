@@ -69,6 +69,7 @@ class Home3 extends Component<any, any> {
     render() {
         return (
             <div>
+                <div>Решить задачу по обработке многомерного массива. На примере данных о сотрудниках</div>
                 <form onSubmit={this.handleSubmit} >
                     <h1> Добавить сотрудника:</h1>
                     <h2> Имя:</h2>

@@ -59,6 +59,7 @@ class Home2 extends React.Component<any, any> {
     render() {
         return (
             <div>
+                <div>Решить задачу по реализации функций добавления, удаления и поиска элементов ассоциативного массива</div>
                 <form onSubmit={this.handleSubmit} >
                     <h2> введите первый элемент массива:<br /></h2>
                     <input type='text' name='firstEl' pattern="\d+" value={this.state.name} onChange={this.handleIntChange} /><br />

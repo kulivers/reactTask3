@@ -1,10 +1,16 @@
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.song {
+    color: #0366d6;
+    font-weight: 400; /* Жирное начертание */
 }
 
 code {
   color: #E01A76;
+}
+
+.genre {
+    color: #E01A76;
+    font-weight: 600; /* Жирное начертание */
 }
 
 ul {

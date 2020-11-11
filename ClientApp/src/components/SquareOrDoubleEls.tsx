@@ -92,6 +92,7 @@ class Home extends  React.Component<any, any> {
     render() {
         return (
             <div>
+                <div>Задание 1. Решить задачу по заполнению одномерного массива, значениями, указанными пользователем и выбранным им условием. Входными значениями являются параметры, переданные пользователем через форму.</div>
                 <form onSubmit={this.handleSubmit} >
                     <h2> Выберите начало отрезка:<br /></h2>
                     <input type='text' pattern="[0-9]*" name='start' value={this.state.name} onChange={this.handleIntChange} /><br />

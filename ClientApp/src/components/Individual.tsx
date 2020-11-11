@@ -85,6 +85,7 @@ class Home6b extends Component<any, any> {
     render() {
         return (
             <div>
+                <div>Написать функцию для решения задачи в соответствии с индивидуальным заданием, входные данные передаются через форму.</div>
                 <form onSubmit={this.handleSubmit} >
 
                     <h2> k:</h2>

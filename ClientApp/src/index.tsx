@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter} from "react-router-dom";
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -8,7 +9,9 @@ import App from './App';
 
 // Get the application-wide store instance, prepopulating with state from the server where available.
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>, 
     document.getElementById('root'));
 
 

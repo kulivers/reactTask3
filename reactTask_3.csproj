@@ -25,12 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\Comp.tsx" />
     <None Remove="ClientApp\src\components\Employers.tsx" />
     <None Remove="ClientApp\src\components\Factorial.tsx" />
     <None Remove="ClientApp\src\components\Individual.tsx" />
     <None Remove="ClientApp\src\components\Music.tsx" />
-    <None Remove="ClientApp\src\components\Сomposition.tsx" />
-    <None Remove="ClientApp\src\Menu.tsx" />
+    <None Remove="ClientApp\src\components\Navigation.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

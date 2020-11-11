@@ -23,7 +23,7 @@ function CheckInputsCorrect(name, post) {
 //Создайте многомерный массив, содержащий названия музыкальных произведений,
 //организованных по жанрам: ассоциативный массив, в котором имена полей будут разными жанрами(«рок», «поп», «джаз» и др.),
 //а элементами — названия песен.Выведите информацию
-class Music extends Component<any, any> {
+class Home5 extends Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -88,6 +88,7 @@ class Music extends Component<any, any> {
 
         return (
             <div>
+                <div>Разработать приложение по работе с массивом: тип массива и решаемые задачи отражены в индивидуальных заданиях:</div>
                 <form onSubmit={this.handleSubmit}>
                     <h1> Добавить песню:</h1>
                     <h2> Название:</h2>
@@ -105,8 +106,8 @@ class Music extends Component<any, any> {
 
                     <ul>
                         {Object.keys(this.state.songs).map((genr: any) =>
-                            <li> {genr}: {this.state.songs[genr].map((song: any) =>
-                                <span>{song}; </span>)}
+                            <li className="genre"> {genr}: {this.state.songs[genr].map((song: any) =>
+                                <span className="song">{song}; </span>)}
 
                             </li>)}
 
@@ -124,4 +125,4 @@ class Music extends Component<any, any> {
 }
 
 
-export default Music;
+export default Home5;

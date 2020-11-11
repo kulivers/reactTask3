@@ -78,6 +78,7 @@ var Home4 = /** @class */ (function (_super) {
     }
     Home4.prototype.render = function () {
         return (React.createElement("div", null,
+            React.createElement("div", null, "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 4. \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043A\u0440\u0438\u043F\u0442 \u043F\u043E \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044E: C \u0441 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u0444\u0443\u043D\u043A\u0446\u0438\u0438."),
             React.createElement("form", { onSubmit: this.handleSubmit },
                 React.createElement("h2", null, " n:"),
                 React.createElement("input", { type: 'text', name: 'n', pattern: "[0-9]*", value: this.state.n, onChange: this.handleIntChange }),
